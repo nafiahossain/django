@@ -57,7 +57,7 @@ home/
                 └── ...
 ```
 
-*Make sure that django/ and trip_scraper/ are in the same directory.*
+***Make sure that django/ and trip_scraper/ are in the same directory.***
 
 
 ## Key Files and Directories
