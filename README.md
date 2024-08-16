@@ -20,9 +20,9 @@ home/
 │       ├── media/    # upon running the project, the migrated images will be stored in this folder.
 │       │   └── property_images/
 │       │       ├── 1/
-│       │       │   ├── 02269120009zuy22k7836.jpg
+│       │       │   └── 02269120009zuy22k7836.jpg
 │       │       ├── 2/
-│       │       │   ├── 20091e000001f8rwc09D0.jpg
+│       │       │   └── 20091e000001f8rwc09D0.jpg
 │       │       └── ....
 │       ├── property_project/
 │       │   ├── __init__.py
