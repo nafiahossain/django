@@ -1,6 +1,6 @@
 # Property Management System
 
-This Django-based Property Management System allows users to manage property listings, including their locations, amenities, images, and more. The application supports scraping hotel data from a PostgreSQL database and displays it in the Django admin interface.
+This Django-based Property Management System allows users to manage property listings, including their locations, amenities, images, and more. The application supports scraping hotel data from a legacy PostgreSQL database and displays it in the Django admin interface.
 
 
 ## Features
