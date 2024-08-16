@@ -19,9 +19,9 @@ home/
 │   └── property_project/
 │       ├── media/    # upon running the project, the migrated images will be stored in this folder.
 │       │   └── property_images/
-│       │       └── 1/
+│       │       ├── 1/
 │       │       │   ├── 02269120009zuy22k7836.jpg
-│       │       └── 2/
+│       │       ├── 2/
 │       │       │   ├── 20091e000001f8rwc09D0.jpg
 │       │       └── ....
 │       ├── property_project/
@@ -41,10 +41,10 @@ home/
 │       │   ├── models.py
 │       │   ├── tests.py
 │       │   ├── urls.py
-│       │   └── views.py
-│       ├── templates/
-│       │   └── property_app/
-│       │       └── home.html
+│       │   ├── views.py
+│       │   └── templates/
+│       │       └── property_app/
+│       │           └── home.html
 │       ├── manage.py
 │       ├── .env
 │       └── README.md
@@ -57,7 +57,8 @@ home/
                 └── ...
 ```
 
-Make sure that django/ and trip_scraper/ are in the same directory.
+*Make sure that django/ and trip_scraper/ are in the same directory.*
+
 
 ## Key Files and Directories
   - **property_app/models.py**: Contains the models for Property, Location, Amenity, and Image.
