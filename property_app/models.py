@@ -35,7 +35,7 @@ class Location(models.Model):
         ('state', 'State'),
         ('city', 'City'),
     ]
-    name = models.CharField(max_length=255, blank=False)  # Required
+    name = models.CharField(max_length=255, unique=True, blank=False)  # Required
     type = models.CharField(max_length=10, choices=LOCATION_TYPES, blank=False)  # Required
     latitude = models.FloatField(blank=True, null=True)  # Optional)
     longitude = models.FloatField(blank=True, null=True)  # Optional)
@@ -45,7 +45,7 @@ class Location(models.Model):
 
 
 class Amenity(models.Model):
-    name = models.CharField(max_length=255, blank=False)  # Required
+    name = models.CharField(max_length=255, unique=True, blank=False)  # Required
 
     def __str__(self):
         return self.name

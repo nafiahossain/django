@@ -18,11 +18,19 @@ class ImageInline(admin.TabularInline):
 
 @admin.register(Property)
 class PropertyAdmin(admin.ModelAdmin):
-    list_display = ('property_id', 'title', 'rating', 'create_date', 'update_date')
+    list_display = ('property_id', 'title', 'rating', 'image_tag', 'create_date', 'update_date')
     filter_horizontal = ('locations', 'amenities')
     inlines = [ImageInline]
     list_filter = ['create_date']
     search_fields = ['title']
+
+    def image_tag(self, obj):
+        first_image = obj.images.first()  # Assuming `images` is a related name for the Image model
+        if first_image and first_image.image:
+            return format_html('<img src="{}" style="max-width: 100px; max-height: 100px;" />', first_image.image.url)
+        return "No Image"
+
+    image_tag.short_description = 'Image'
 
 
 @admin.register(Location)

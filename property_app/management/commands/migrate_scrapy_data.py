@@ -43,7 +43,7 @@ class Command(BaseCommand):
         session = Session()
 
         # Path to your local image directory
-        LOCAL_IMAGE_DIR = os.path.join(settings.BASE_DIR, '../../trip_scraper/trip_scraper/images/full/')
+        LOCAL_IMAGE_DIR = os.path.join(settings.BASE_DIR, '../../web_scraping/trip_scraper/images/full/')
 
         # Fetch all hotels from the existing database
         result = session.execute(hotels.select())
@@ -94,11 +94,9 @@ class Command(BaseCommand):
                             image = Image(property=property)
                             image.image.save(filename, File(img_temp), save=True)
                     else:
-                        self.stdout.write(self.style.WARNING(f'Image already exists for 
-                                                             property {property.title}: {local_img_path}'))
+                        self.stdout.write(self.style.WARNING(f'Image already exists for property {property.title}: {local_img_path}'))
                 else:
-                    self.stdout.write(self.style.WARNING(f'Image not found for 
-                                                         property {property.title}: {local_img_path}'))
+                    self.stdout.write(self.style.WARNING(f'Image not found for property {property.title}: {local_img_path}'))
 
 
         self.stdout.write(self.style.SUCCESS('Successfully migrated data from existing PostgreSQL database for Scrapy to Django'))
