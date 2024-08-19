@@ -80,14 +80,14 @@ home/
 
 ## Setup Instructions
 
-  1. **Clone the repository**:
+  ### 1. **Clone the repository**:
   
       ```bash
       git clone https://github.com/nafiahossain/django.git
       cd django
       ```
 
-  2. **Create and activate a virtual environment** (optional but recommended):
+  ### 2. **Create and activate a virtual environment** (optional but recommended):
   
       Create a virtual environment and install dependencies:
       
@@ -96,7 +96,7 @@ home/
       source venv/bin/activate  # On Windows use `venv\Scripts\activate`
       ```
 
-  3. **Install dependencies**:
+  ### 3. **Install dependencies**:
 
       ```bash
       pip install -r requirements.txt
@@ -108,7 +108,7 @@ home/
       pip install django psycopg2-binary sqlalchemy python-dotenv pillow requests
       ```
      
-  4. **Set up environment variables**:
+  ### 4. **Set up environment variables**:
   
       Ensure you have a .env file at the root of the project containing the following:
       
@@ -126,7 +126,7 @@ home/
       
       Ensure that your PostgreSQL server is running, and the database specified in the .env file exists.
      
-  5. **Run migrations**:
+  ### 5. **Run migrations**:
   
       Apply the database migrations:
       
@@ -136,7 +136,7 @@ home/
       python manage.py migrate
       ```
 
-  6. **Load initial scrapy data**:
+  ### 6. **Load initial scrapy data**:
   
       You can use the custom management command to migrate data from the existing PostgreSQL 
       database:
@@ -145,7 +145,7 @@ home/
       python manage.py migrate_scrapy_data
       ```
 
-  7. **Create an admin user**:
+  ### 7. **Create an admin user**:
   
       To use the admin panel, First you’ll need to create a user who can login to the admin site. Run the following command:
         
@@ -155,7 +155,7 @@ home/
     
       Enter your desired username, email address, and password. You will be asked to enter your password twice, the second time as a confirmation of the first. Using this info, you can log in to the admin panel and       perform CRUD operation on the migrated data.
 
-  8. **Run the development server**:
+  ### 8. **Run the development server**:
   
       Start the Django development server:
       
