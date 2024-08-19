@@ -90,7 +90,7 @@ home/
   
   Ensure you have a .env file at the root of the project containing the following:
   
-  ```plaintext
+  ```env
   SECRET_KEY=your-secret-key
 
   DB_NAME=your_db_name
