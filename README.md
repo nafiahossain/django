@@ -11,7 +11,21 @@ This Django-based Property Management System allows users to manage property lis
   - Admin Interface: Enhanced admin interface to display property details, including images.
 
 
+## Installation
+
+### Prerequisites
+
+- Python 3.7 or later
+- Django
+- PostgreSQL
+- SQLAlchemy
+- dotenv (highly recommended for database confidentiality)
+- Virtualenv (optional but recommended)
+
+
 ## Project Structure
+
+***Make sure that django/ and trip_scraper/ are in the same directory.***
 
 ```bash
 home/
@@ -57,9 +71,6 @@ home/
                 └── ...
 ```
 
-***Make sure that django/ and trip_scraper/ are in the same directory.***
-
-
 ## Key Files and Directories
   - **property_app/models.py**: Contains the models for Property, Location, Amenity, and Image.
   - **property_app/admin.py**: Configures the Django admin interface for the application.
@@ -69,76 +80,90 @@ home/
 
 ## Setup Instructions
 
-  1. Clone the repository:
+  1. **Clone the repository**:
   
-  ```bash
-  git clone https://github.com/nafiahossain/django.git
-  cd django
-  ```
+      ```bash
+      git clone https://github.com/nafiahossain/django.git
+      cd django
+      ```
 
-  2. Install dependencies:
+  2. **Create and activate a virtual environment** (optional but recommended):
   
-  Create a virtual environment and install dependencies:
-  
-  ```bash
-  python3 -m venv venv
-  source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-  pip install -r requirements.txt
-  ```
+      Create a virtual environment and install dependencies:
+      
+      ```bash
+      python3 -m venv venv
+      source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+      ```
 
-  3. Configure environment variables:
-  
-  Ensure you have a .env file at the root of the project containing the following:
-  
-  ```env
-  SECRET_KEY=your-secret-key
+  3. **Install dependencies**:
 
-  DB_NAME=your_db_name
-  DB_USER=your_username
-  DB_PASSWORD=your_password
-  DB_HOST=localhost
-  DB_PORT=5432
+      ```bash
+      pip install -r requirements.txt
+      ```
+      
+      or,
+     
+      ```bash
+      pip install django psycopg2-binary sqlalchemy python-dotenv pillow requests
+      ```
+     
+  4. **Set up environment variables**:
   
-  DATABASE_URL=postgresql://your_username:your_password@localhost:5432/your_db_name
-  ```
-  4. Run migrations:
-  
-  Apply the database migrations:
-  
-  ```bash
-  cd property_project
-  python manage.py makemigrations property_app
-  python manage.py migrate
-  ```
+      Ensure you have a .env file at the root of the project containing the following:
+      
+      ```env
+      SECRET_KEY=your-secret-key
 
-  5. Load or scrape initial data:
+      DB_NAME=yourdatabase
+      DB_USER=username
+      DB_PASSWORD=password
+      DB_HOST=localhost
+      DB_PORT=5433
+      
+      DATABASE_URL=postgresql://username:password@localhost:5433/yourdatabase
+      ```
+      
+      Ensure that your PostgreSQL server is running, and the database specified in the .env file exists.
+     
+  5. **Run migrations**:
   
-  You can use the custom management command to migrate data from the existing PostgreSQL 
-  database:
+      Apply the database migrations:
+      
+      ```bash
+      cd property_project
+      python manage.py makemigrations property_app
+      python manage.py migrate
+      ```
+
+  6. **Load initial scrapy data**:
+  
+      You can use the custom management command to migrate data from the existing PostgreSQL 
+      database:
+        
+      ```bash
+      python manage.py migrate_scrapy_data
+      ```
+
+  7. **Create an admin user**:
+  
+      To use the admin panel, First you’ll need to create a user who can login to the admin site. Run the following command:
+        
+      ```bash
+      python manage.py createsuperuser
+      ```
     
-  ```bash
-  python manage.py migrate_scrapy_data
-  ```
+      Enter your desired username, email address, and password. You will be asked to enter your password twice, the second time as a confirmation of the first. Using this info, you can log in to the admin panel and       perform CRUD operation on the migrated data.
 
-  6. Create an admin user:
+  8. **Run the development server**:
   
-  To use the admin panel, First you’ll need to create a user who can login to the admin site. Run the following command:
+      Start the Django development server:
+      
+      ```bash
+      python manage.py runserver
+      ```
     
-  ```bash
-  python manage.py createsuperuser
-  ```
-
-  Enter your desired username, email address, and password. You will be asked to enter your password twice, the second time as a confirmation of the first.
-
-  7. Run the development server:
-  
-  Start the Django development server:
-  
-  ```bash
-  python manage.py runserver
-  ```
-
-  Visit http://127.0.0.1:8000/ to see the application.
+      Visit http://127.0.0.1:8000/ to see the application.
 
 
 ## Usage
