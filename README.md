@@ -119,6 +119,16 @@ home/
   python manage.py migrate_scrapy_data
   ```
 
+  5. Create an admin user:
+  
+  To use the admin panel, First you’ll need to create a user who can login to the admin site. Run the following command:
+    
+  ```bash
+  python manage.py createsuperuser
+  ```
+
+  Enter your desired username, email address, and password. You will be asked to enter your password twice, the second time as a confirmation of the first.
+
   6. Run the development server:
   
   Start the Django development server:
