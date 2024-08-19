@@ -106,6 +106,7 @@ home/
   Apply the database migrations:
   
   ```bash
+  cd property_project
   python manage.py makemigrations property_app
   python manage.py migrate
   ```
@@ -119,7 +120,7 @@ home/
   python manage.py migrate_scrapy_data
   ```
 
-  5. Create an admin user:
+  6. Create an admin user:
   
   To use the admin panel, First you’ll need to create a user who can login to the admin site. Run the following command:
     
@@ -129,7 +130,7 @@ home/
 
   Enter your desired username, email address, and password. You will be asked to enter your password twice, the second time as a confirmation of the first.
 
-  6. Run the development server:
+  7. Run the development server:
   
   Start the Django development server:
   
