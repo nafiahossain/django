@@ -4,11 +4,11 @@ This Django-based Property Management System allows users to manage property lis
 
 
 ## Features
-  - Property Management: Create, update, and delete property records with details like title, rating, locations, amenities, and images.
-  - Location & Amenities Management: Manage locations (city, state, country) and amenities related to properties.
-  - Image Management: Upload and display images associated with each property in the admin interface.
-  - Data Migration: Custom management command to migrate data from an existing PostgreSQL database, including local images.
-  - Admin Interface: Enhanced admin interface to display property details, including images.
+  - **Property Management**: Create, update, and delete property records with details like title, rating, locations, amenities, and images.
+  - **Location & Amenities Management**: Manage locations (city, state, country) and amenities related to properties.
+  - **Image Management**: Upload and display images associated with each property in the admin interface.
+  - **Data Migration**: Custom management command to migrate data from an existing PostgreSQL database, including local images.
+  - **Admin Interface**: Enhanced admin interface to display property details, including images.
 
 
 ## Installation
