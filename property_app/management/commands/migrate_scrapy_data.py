@@ -43,7 +43,7 @@ class Command(BaseCommand):
         session = Session()
 
         # Path to your local image directory
-        LOCAL_IMAGE_DIR = os.path.join(settings.BASE_DIR, '../../web_scraping/trip_scraper/images/full/')
+        LOCAL_IMAGE_DIR = os.path.join(settings.BASE_DIR, '../trip_scraper/trip_scraper/images/full/')
 
         # Fetch all hotels from the existing database
         result = session.execute(hotels.select())
