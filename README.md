@@ -192,7 +192,7 @@ root/
 
 ## Testing
 
-After running the server, check the [/Django admin interface/](http://127.0.0.1:8000/admin/) to view all the migrated data. There will be three models, Properties, Amenities, and Locations. You can perform CRUD operations on these models. Also check your database and image directory whether the data was migrated or not. 
+After running the server, check the [Django admin interface](http://127.0.0.1:8000/admin/) to view all the migrated data. There will be three models, Properties, Amenities, and Locations. You can perform CRUD operations on these models. Also check your database and image directory whether the data was migrated or not. 
 
 
 ## Starting New Project (optional)
