@@ -38,38 +38,37 @@ This Django-based Property Management System allows users to manage property lis
 ```bash
 home/
 ├── django/
-│   └── property_project/
-│       ├── media/    # upon running the project, the migrated images will be stored in this folder.
-│       │   └── property_images/
-│       │       ├── 1/
-│       │       │   └── 02269120009zuy22k7836.jpg
-│       │       ├── 2/
-│       │       │   └── 20091e000001f8rwc09D0.jpg
-│       │       └── ....
-│       ├── property_project/
-│       │   ├── __init__.py
-│       │   ├── asgi.py
-│       │   ├── settings.py
-│       │   ├── urls.py
-│       │   └── wsgi.py
-│       ├── property_app/
-│       │   ├── __init__.py
-│       │   ├── admin.py
-│       │   ├── apps.py
-│       │   ├── management/
-│       │   │   └── commands/
-│       │   │       └── migrate_scrapy_data.py
-│       │   ├── migrations/
-│       │   ├── models.py
-│       │   ├── tests.py
-│       │   ├── urls.py
-│       │   ├── views.py
-│       │   └── templates/
-│       │       └── property_app/
-│       │           └── home.html
-│       ├── manage.py
-│       ├── .env
-│       └── README.md
+│   ├── media/    # upon running the project, the migrated images will be stored in this folder.
+│   │   └── property_images/
+│   │       ├── 1/
+│   │       │   └── 02269120009zuy22k7836.jpg
+│   │       ├── 2/
+│   │       │   └── 20091e000001f8rwc09D0.jpg
+│   │       └── ....
+│   ├── property_project/
+│   │   ├── __init__.py
+│   │   ├── asgi.py
+│   │   ├── settings.py
+│   │   ├── urls.py
+│   │   └── wsgi.py
+│   ├── property_app/
+│   │   ├── __init__.py
+│   │   ├── admin.py
+│   │   ├── apps.py
+│   │   ├── management/
+│   │   │   └── commands/
+│   │   │       └── migrate_scrapy_data.py
+│   │   ├── migrations/
+│   │   ├── models.py
+│   │   ├── tests.py
+│   │   ├── urls.py
+│   │   ├── views.py
+│   │   └── templates/
+│   │       └── property_app/
+│   │           └── home.html
+│   ├── manage.py
+│   ├── .env
+│   └── README.md
 └── trip_scraper/
     └── trip_scraper/
         └── images/
