@@ -139,7 +139,6 @@ home/
       Apply the database migrations:
       
       ```bash
-      cd property_project
       python manage.py makemigrations property_app
       python manage.py migrate
       ```
