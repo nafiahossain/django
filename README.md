@@ -117,7 +117,7 @@ root/
      
   4. **Set up environment variables**:
   
-      Ensure you have a .env (rename the .env.sample to .env, then add your credentials) file at the root of the project containing the following:
+      Ensure you have a .env (rename the .env.sample to .env, then add your credentials) file at the root of the Django project containing the following:
       
       ```env
       SECRET_KEY=your-secret-key
