@@ -19,6 +19,7 @@ class ImageInline(admin.TabularInline):
 @admin.register(Property)
 class PropertyAdmin(admin.ModelAdmin):
     list_display = ('property_id', 'title', 'rating', 'image_tag', 'create_date', 'update_date')
+    list_display_links = ('property_id', 'title')
     filter_horizontal = ('locations', 'amenities')
     inlines = [ImageInline]
     list_filter = ['create_date']
@@ -27,7 +28,7 @@ class PropertyAdmin(admin.ModelAdmin):
     def image_tag(self, obj):
         first_image = obj.images.first()  # Assuming `images` is a related name for the Image model
         if first_image and first_image.image:
-            return format_html('<img src="{}" style="max-width: 100px; max-height: 100px;" />', first_image.image.url)
+            return format_html('<img src="{}" style="max-width: 80px; max-height: 80px;" />', first_image.image.url)
         return "No Image"
 
     image_tag.short_description = 'Image'
@@ -36,12 +37,14 @@ class PropertyAdmin(admin.ModelAdmin):
 @admin.register(Location)
 class LocationAdmin(admin.ModelAdmin):
     list_display = ('id', 'name', 'type', 'latitude', 'longitude')
+    list_display_links = ('id', 'name')
     search_fields = ['name', 'type',]
 
 
 @admin.register(Amenity)
 class AmenityAdmin(admin.ModelAdmin):
     list_display = ('id', 'name',)
+    list_display_links = ('id', 'name')
     search_fields = ['name',]
 
 

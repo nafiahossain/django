@@ -13,6 +13,9 @@ class Property(models.Model):
     address = models.TextField(blank=True, null=True)  # Optional
     amenities = models.ManyToManyField('Amenity', blank=True)  # Optional
 
+    class Meta:
+        verbose_name_plural = "Properties"
+
     def __str__(self):
         return self.title
 
@@ -40,12 +43,18 @@ class Location(models.Model):
     latitude = models.FloatField(blank=True, null=True)  # Optional)
     longitude = models.FloatField(blank=True, null=True)  # Optional)
 
+    class Meta:
+        verbose_name_plural = "Locations"
+        
     def __str__(self):
         return f"{self.name} ({self.get_type_display()})"
 
 
 class Amenity(models.Model):
     name = models.CharField(max_length=255, unique=True, blank=False)  # Required
+
+    class Meta:
+        verbose_name_plural = "Amenities"
 
     def __str__(self):
         return self.name
