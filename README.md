@@ -187,7 +187,7 @@ root/
 
 ## Usage
   - **Home Page**: The home page is accessible at the root URL [/](http://127.0.0.1:8000/).
-  - **Admin Interface**: Access the Django admin at [/admin/](http://127.0.0.1:8000/admin/) to manage properties, locations, amenities, and images.
+  - **Admin Interface**: Access the Django admin at [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/) to manage properties, locations, amenities, and images.
 
 
 ## Testing
