@@ -1,6 +1,6 @@
 # Property Management System
 
-This Django-based Property Management System allows users to manage property listings, including their locations, amenities, images, and more. The application supports scraping hotel data from a legacy PostgreSQL database and displays it in the Django admin interface.
+This Django project is a property management application designed to manage and display property listings, locations, amenities, and associated images. The project integrates with an existing PostgreSQL database using both Django ORM and SQLAlchemy to migrate and manage data. The admin interface has been customized to provide a user-friendly management experience for administrators, enabling them to manage properties, images, locations, and amenities seamlessly.
 
 
 ## Features
@@ -36,7 +36,7 @@ This Django-based Property Management System allows users to manage property lis
 ***Make sure that django/ and trip_scraper/ are in the same directory.***
 
 ```bash
-home/
+root/
 ├── django/
 │   ├── media/    # upon running the project, the migrated images will be stored in this folder.
 │   │   └── property_images/
@@ -144,14 +144,21 @@ home/
 
   6. **Load initial scrapy data**:
   
-      You can use the custom management command to migrate data from the existing PostgreSQL 
-      database:
-        
-      ```bash
+      You can use the custom management command to migrate data from the existing PostgreSQL database. Before running this command, make sure to Replace your scrapy local image directory with the actual path where        it was stored. If, the django folder and the trip_scraper folder is in the same directory (as shown in the Project Structure), then keep it as it is.
+
+      ```python
+      # migrate_scrapy_data.py
+  
+      # Path to your local image directory
+        LOCAL_IMAGE_DIR = os.path.join(settings.BASE_DIR, '../trip_scraper/trip_scraper/images/full/')
+      ```
+      If the scrapy image directory setup is done, then run this command to migrate data from existing scrapy database:
+
+     ```bash
       python manage.py migrate_scrapy_data
       ```
 
-  7. **Create an admin user**:
+  8. **Create an admin user**:
   
       To use the admin panel, First you’ll need to create a user who can login to the admin site. Run the following command:
         
@@ -161,7 +168,7 @@ home/
     
       Enter your desired username, email address, and password. You will be asked to enter your password twice, the second time as a confirmation of the first. Using this info, you can log in to the admin panel and       perform CRUD operation on the migrated data.
 
-  8. **Run the development server**:
+  9. **Run the development server**:
   
       Start the Django development server:
       
@@ -169,7 +176,13 @@ home/
       python manage.py runserver
       ```
     
-      Visit http://127.0.0.1:8000/ to see the application.
+      Visit [http://127.0.0.1:8000/](http://127.0.0.1:8000/) to see the application.
+
+     - Output:
+
+        - Images: Images migrated and stored stored in a directory called `/media/`.
+        - Database: Migrated hotel data stored in 'yourdatabase', in the PostgreSQL database.
+        - Django Admin Interface: Migrated data can be seen on the admin interface.
 
 
 ## Usage
@@ -177,3 +190,26 @@ home/
   - **Admin Interface**: Access the Django admin at [/admin/](http://127.0.0.1:8000/admin/) to manage properties, locations, amenities, and images.
 
 
+## Testing
+
+After running the server, check the [/Django admin interface/](http://127.0.0.1:8000/admin/) to view all the migrated data. There will be three models, Properties, Amenities, and Locations. You can perform CRUD operations on these models. Also check your database and image directory whether the data was migrated or not. 
+
+
+## Starting New Project (optional)
+
+If you want to create a new django project, then run this following commands: 
+
+    
+     django-admin startproject property_project
+    
+This will create a property_project directory in your current directory. This establishes a Django project – a collection of settings for an instance of Django, including database configuration, Django-specific options and application-specific settings.
+
+To verify your Django project works, run this following command:
+
+    
+    python manage.py runserver
+    
+
+## Contributing
+
+Contributions are welcome! Please submit a pull request or open an issue for discussion.
