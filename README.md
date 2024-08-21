@@ -1,6 +1,6 @@
 # Property Management System
 
-This Django project is a property management application designed to manage and display property listings, locations, amenities, and associated images. The project integrates with an existing PostgreSQL database using both Django ORM and SQLAlchemy to migrate and manage data. The admin interface has been customized to provide a user-friendly management experience for administrators, enabling them to manage properties, images, locations, and amenities seamlessly.
+This Django project is a property management application designed to manage and display property listings, locations, amenities, and associated images. The project integrates with an existing PostgreSQL database (the database containing hotel data that were scrped from trip.com using scrapy spider) using both Django ORM and SQLAlchemy to migrate and manage data. The admin interface has been customized to provide a user-friendly management experience for administrators, enabling them to manage properties, images, locations, and amenities seamlessly.
 
 
 ## Features
@@ -42,6 +42,8 @@ root/
 │   │   └── property_images/
 │   │       ├── 1/
 │   │       │   └── 02269120009zuy22k7836.jpg
+│   │       ├── 2/
+│   │       │   └── 20091e000001f8rwc09D0.jpg
 │   │       └── ....
 │   ├── property_project/
 │   │   ├── __init__.py
@@ -67,7 +69,6 @@ root/
 │   ├── manage.py
 │   ├── .env
 │   └── README.md
-│
 └── trip_scraper/
     └── trip_scraper/
         └── images/
@@ -146,12 +147,24 @@ root/
       You can use the custom management command to migrate data from the existing PostgreSQL database. Before running this command, make sure to Replace your scrapy local image directory with the actual path where        it was stored. If, the django folder and the trip_scraper folder is in the same directory (as shown in the Project Structure), then keep it as it is.
 
       ```python
-      # migrate_scrapy_data.py
+      # property_app/migrate_scrapy_data.py
   
       # Path to your local image directory
         LOCAL_IMAGE_DIR = os.path.join(settings.BASE_DIR, '../trip_scraper/trip_scraper/images/full/')
       ```
-      If the scrapy image directory setup is done, then run this command to migrate data from existing scrapy database:
+      
+      After data migration, the images will be saved in this directory:
+
+      ```python
+      # property_project/settings.py.py
+  
+      # Media files (Images, etc)
+      MEDIA_URL = '/media/'
+      MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+      ```
+      If you want, you can change this directory as per your need.
+     
+      If the scrapy image directory setup is done, then run this command to migrate data from the existing scrapy database:
 
      ```bash
       python manage.py migrate_scrapy_data
@@ -175,7 +188,7 @@ root/
       python manage.py runserver
       ```
     
-      Visit [http://127.0.0.1:8000/](http://127.0.0.1:8000/) to see the application.
+      Visit [http://127.0.0.1:8000/](http://127.0.0.1:8000/) to see the application. To perfrom CRUD operation on data, you'll need to log in to the admin panel which is [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/). 
 
      - Output:
 
