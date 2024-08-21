@@ -131,7 +131,8 @@ root/
       
       DATABASE_URL=postgresql://username:password@localhost:5433/yourdatabase
       ```
-      
+
+      **You can use the previously created database for the scrapy project to store the data migrated through this django project. So, no need to create a new database.**
       Ensure that your PostgreSQL server is running, and the database specified in the .env file exists.
      
   5. **Run migrations**:
