@@ -145,7 +145,7 @@ root/
 
   6. **Load initial scrapy data**:
   
-      You can use the custom management command to migrate data from the existing PostgreSQL database. Before running this command, make sure to Replace your scrapy local image directory with the actual path where        it was stored. If, the django folder and the trip_scraper folder is in the same directory (as shown in the Project Structure), then keep it as it is.
+      You can use the custom management command to migrate data from the existing PostgreSQL database. Before running this command, make sure to Replace your scrapy local image directory with the actual path where        it was stored. If, the django folder and the trip_scraper folder is in the same directory (as shown in the [Project Structure](#project-structure)), then keep it as it is.
 
       ```python
       # property_app/migrate_scrapy_data.py
