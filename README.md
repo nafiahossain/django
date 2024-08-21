@@ -42,8 +42,6 @@ root/
 │   │   └── property_images/
 │   │       ├── 1/
 │   │       │   └── 02269120009zuy22k7836.jpg
-│   │       ├── 2/
-│   │       │   └── 20091e000001f8rwc09D0.jpg
 │   │       └── ....
 │   ├── property_project/
 │   │   ├── __init__.py
@@ -69,6 +67,7 @@ root/
 │   ├── manage.py
 │   ├── .env
 │   └── README.md
+│
 └── trip_scraper/
     └── trip_scraper/
         └── images/
