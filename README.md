@@ -66,6 +66,8 @@ root/
 │   │           └── home.html
 │   ├── manage.py
 │   ├── .env
+│   ├── requirements.txt
+│   ├── .gitignore
 │   └── README.md
 │
 └── trip_scraper/
